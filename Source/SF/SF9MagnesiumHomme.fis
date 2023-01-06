@@ -1,0 +1,33 @@
+[System]
+Name='SF9MagnesiumHomme'
+Type='sugeno'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='magnesiumH'
+Range=[100 3000]
+NumMFs=3
+MF1='faible':'trapmf',[100 100 200 300]
+MF2='moyen':'trapmf',[200 300 520 2500]
+MF3='eleve':'trapmf',[520 2500 3000 3000]
+
+[Output1]
+Name='magnesiumH'
+Range=[0 1]
+NumMFs=3
+MF1='faible':'constant',[0]
+MF2='moyen':'constant',[0.5]
+MF3='eleve':'constant',[1]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1

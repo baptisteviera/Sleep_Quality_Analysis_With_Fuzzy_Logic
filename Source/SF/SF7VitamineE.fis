@@ -1,0 +1,33 @@
+[System]
+Name='SF7VitamineE'
+Type='sugeno'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='VitamineE'
+Range=[0 400]
+NumMFs=3
+MF1='faible':'trapmf',[0 0 10 15]
+MF2='moyen':'trapmf',[10 15 35 40]
+MF3='eleve':'trapmf',[40 40 200 400]
+
+[Output1]
+Name='vitamineE'
+Range=[0 1]
+NumMFs=3
+MF1='faible':'constant',[0]
+MF2='moyen':'constant',[0.5]
+MF3='eleve':'constant',[1]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1

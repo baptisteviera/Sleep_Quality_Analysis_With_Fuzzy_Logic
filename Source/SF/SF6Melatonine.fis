@@ -1,0 +1,74 @@
+[System]
+Name='SF6Melatonine'
+Type='sugeno'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='Calcium'
+Range=[0 3]
+NumMFs=3
+MF1='faible':'trapmf',[0 0 1.8 2]
+MF2='moyen':'trapmf',[1.8 2.2 2.6 2.7]
+MF3='eleve':'trapmf',[2.6 2.9 3 3]
+
+[Input2]
+Name='Lumièrebleue'
+Range=[0 24]
+NumMFs=4
+MF1='moyen':'trapmf',[0 0 1 2]
+MF2='eleve':'trapmf',[1 2 4 6]
+MF3='faible':'trapmf',[4 6 22 23]
+MF4='moyen':'trapmf',[22 23 24 24]
+
+[Input3]
+Name='VitamineB6'
+Range=[0 207]
+NumMFs=3
+MF1='faible':'trapmf',[0 0 1 1.5]
+MF2='moyen':'trapmf',[1 1.5 1.8 2.4]
+MF3='eleve':'trapmf',[1.8 2.4 100 207]
+
+[Output1]
+Name='melatonine'
+Range=[0 1]
+NumMFs=3
+MF1='faible':'constant',[0]
+MF2='moyen':'constant',[0.5]
+MF3='eleve':'constant',[1]
+
+[Rules]
+1 3 1, 1 (1) : 1
+1 3 2, 2 (1) : 1
+1 3 3, 2 (1) : 1
+1 1 1, 1 (1) : 1
+1 1 2, 1 (1) : 1
+1 1 3, 1 (1) : 1
+1 2 1, 1 (1) : 1
+1 2 2, 1 (1) : 1
+1 2 3, 1 (1) : 1
+2 3 1, 2 (1) : 1
+2 3 2, 3 (1) : 1
+2 3 3, 3 (1) : 1
+2 1 1, 1 (1) : 1
+2 1 2, 1 (1) : 1
+2 1 3, 2 (1) : 1
+2 2 1, 1 (1) : 1
+2 2 2, 1 (1) : 1
+2 2 3, 1 (1) : 1
+3 3 1, 3 (1) : 1
+3 3 2, 3 (1) : 1
+3 3 3, 3 (1) : 1
+3 1 1, 2 (1) : 1
+3 1 2, 3 (1) : 1
+3 1 3, 3 (1) : 1
+3 2 1, 1 (1) : 1
+3 2 2, 1 (1) : 1
+3 2 3, 1 (1) : 1

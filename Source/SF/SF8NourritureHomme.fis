@@ -1,0 +1,73 @@
+[System]
+Name='SF8NourritureHomme'
+Type='sugeno'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='glucide'
+Range=[50 700]
+NumMFs=3
+MF1='faible':'trapmf',[50 50 150 200]
+MF2='moyen':'trapmf',[150 200 500 600]
+MF3='eleve':'trapmf',[500 600 700 700]
+
+[Input2]
+Name='gras'
+Range=[33 300]
+NumMFs=3
+MF1='faible':'trapmf',[33 33 50 70]
+MF2='moyen':'trapmf',[50 70 140 225]
+MF3='eleve':'trapmf',[140 225 300 300]
+
+[Input3]
+Name='fibre'
+Range=[5 100]
+NumMFs=3
+MF1='faible':'trapmf',[5 5 15 30]
+MF2='moyen':'trapmf',[15 30 40 70]
+MF3='eleve':'trapmf',[40 70 100 100]
+
+[Output1]
+Name='nourritureH'
+Range=[0 1]
+NumMFs=3
+MF1='faible':'constant',[0]
+MF2='moyen':'constant',[0.5]
+MF3='eleve':'constant',[1]
+
+[Rules]
+1 1 1, 1 (1) : 1
+1 2 1, 2 (1) : 1
+1 3 1, 3 (1) : 1
+2 1 1, 1 (1) : 1
+2 2 1, 1 (1) : 1
+2 3 1, 2 (1) : 1
+3 1 1, 1 (1) : 1
+3 2 1, 1 (1) : 1
+3 3 1, 1 (1) : 1
+1 1 2, 1 (1) : 1
+1 2 2, 3 (1) : 1
+1 3 2, 3 (1) : 1
+2 1 2, 1 (1) : 1
+2 2 2, 2 (1) : 1
+2 3 2, 3 (1) : 1
+3 1 2, 1 (1) : 1
+3 2 2, 1 (1) : 1
+3 3 2, 1 (1) : 1
+1 1 3, 2 (1) : 1
+1 2 3, 3 (1) : 1
+1 3 3, 3 (1) : 1
+2 1 3, 1 (1) : 1
+2 2 3, 3 (1) : 1
+2 3 3, 3 (1) : 1
+3 1 3, 1 (1) : 1
+3 2 3, 1 (1) : 1
+3 3 3, 1 (1) : 1

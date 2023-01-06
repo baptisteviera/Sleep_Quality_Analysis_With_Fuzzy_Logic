@@ -1,0 +1,51 @@
+[System]
+Name='SF1Adenosine'
+Type='sugeno'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=12
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='caféQ'
+Range=[0 10]
+NumMFs=4
+MF1='rien':'trapmf',[0 0 0 0.595238095238095]
+MF2='faible':'trapmf',[1 1 1 2]
+MF3='moyen':'trapmf',[1 2 3 4]
+MF4='eleve':'trapmf',[3 4 10 10]
+
+[Input2]
+Name='caféH'
+Range=[0 24]
+NumMFs=3
+MF1='faible':'trapmf',[0 0 3 6]
+MF2='moyen':'trapmf',[3 6 12 16]
+MF3='eleve':'trapmf',[12 16 24 24]
+
+[Output1]
+Name='Adénoine'
+Range=[0 1]
+NumMFs=3
+MF1='faible':'constant',[0]
+MF2='moyen':'constant',[0.5]
+MF3='eleve':'constant',[1]
+
+[Rules]
+1 1, 3 (1) : 1
+1 2, 3 (1) : 1
+1 3, 3 (1) : 1
+2 1, 2 (1) : 1
+2 2, 3 (1) : 1
+2 3, 3 (1) : 1
+3 1, 1 (1) : 1
+3 2, 2 (1) : 1
+3 3, 3 (1) : 1
+4 1, 1 (1) : 1
+4 2, 1 (1) : 1
+4 3, 2 (1) : 1

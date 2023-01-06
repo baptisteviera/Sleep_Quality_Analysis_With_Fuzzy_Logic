@@ -1,0 +1,87 @@
+[System]
+Name='SFTraitement'
+Type='sugeno'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='apnée'
+Range=[0 1]
+NumMFs=3
+MF1='faible':'trapmf',[0 0 0 0]
+MF2='moyen':'trapmf',[0.5 0.5 0.5 0.5]
+MF3='eleve':'trapmf',[1 1 1 1]
+
+[Input2]
+Name='insomnie'
+Range=[0 1]
+NumMFs=3
+MF1='faible':'trapmf',[0 0 0 0]
+MF2='moyen':'trapmf',[0.5 0.5 0.5 0.5]
+MF3='eleve':'trapmf',[1 1 1 1]
+
+[Input3]
+Name='Qsommeil'
+Range=[0 1]
+NumMFs=3
+MF1='faible':'trapmf',[0 0 0 0]
+MF2='moyen':'trapmf',[0.5 0.5 0.5 0.5]
+MF3='eleve':'trapmf',[1 1 1 1]
+
+[Output1]
+Name='traitement'
+Range=[0 1]
+NumMFs=17
+MF1='traitement1':'constant',[0]
+MF2='traitement2':'constant',[0.125]
+MF3='traitement3':'constant',[0.25]
+MF4='traitement4':'constant',[0.375]
+MF5='traitement5':'constant',[0.5]
+MF6='traitement6':'constant',[0.625]
+MF7='traitement7':'constant',[0.75]
+MF8='traitement8':'constant',[0.875]
+MF9='traitement9':'constant',[1]
+MF10='traitement10':'constant',[0]
+MF11='traitement11':'constant',[0.2]
+MF12='traitement12':'constant',[0.4]
+MF13='traitement13':'constant',[0.6]
+MF14='traitement14':'constant',[0.8]
+MF15='traitement15':'constant',[1]
+MF16='traitement16':'constant',[0]
+MF17='CasImpossible':'constant',[1]
+
+[Rules]
+1 1 1, 1 (1) : 1
+2 1 1, 4 (1) : 1
+3 1 1, 5 (1) : 1
+1 2 1, 2 (1) : 1
+2 2 1, 6 (1) : 1
+3 2 1, 7 (1) : 1
+1 3 1, 3 (1) : 1
+2 3 1, 8 (1) : 1
+3 3 1, 9 (1) : 1
+1 1 2, 10 (1) : 1
+1 2 2, 11 (1) : 1
+1 3 2, 17 (1) : 1
+2 1 2, 13 (1) : 1
+2 2 2, 14 (1) : 1
+2 3 2, 17 (1) : 1
+3 1 2, 17 (1) : 1
+3 2 2, 17 (1) : 1
+3 3 2, 17 (1) : 1
+1 1 3, 15 (1) : 1
+1 3 3, 17 (1) : 1
+1 2 3, 17 (1) : 1
+2 1 3, 17 (1) : 1
+2 2 3, 17 (1) : 1
+2 3 3, 17 (1) : 1
+3 1 3, 17 (1) : 1
+3 2 3, 17 (1) : 1
+3 3 3, 17 (1) : 1
